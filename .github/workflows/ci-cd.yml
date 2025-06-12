@@ -43,7 +43,7 @@ snyk:
     steps:
     - uses: actions/checkout@v4
     - name: Snyk monitor
-      uses:snyk/actions/python@master
+      uses: snyk/actions/python@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
