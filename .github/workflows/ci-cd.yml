@@ -33,7 +33,7 @@ sonarcloud:
     - uses: actions/checkout@v4
     - uses: sonarsource/sonarcloud-github-action@master
       with:
-projectBaseDir: .
+        projectBaseDir: .
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
