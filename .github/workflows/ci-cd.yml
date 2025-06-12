@@ -81,7 +81,7 @@ jobs:
         docker push $IMAGE_NAME:staging
 
     - name: Push image to DockerHub (Production)
-      if: ${{ secrets.ENVIRONMENT == 'prod' }}
+      if: env.ENV == 'staging'
       run: |
         docker tag $IMAGE_NAME:${{ github.run_number }} $IMAGE_NAME:prod
         docker push $IMAGE_NAME:prod
