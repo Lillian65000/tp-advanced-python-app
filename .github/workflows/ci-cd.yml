@@ -43,11 +43,11 @@ snyk:
     steps:
     - uses: actions/checkout@v4
     - name: Snyk monitor
-uses:snyk/actions/python@master
-env:
-SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      uses:snyk/actions/python@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-args: --severity-threshold=high
+        args: --severity-threshold=high
 
 docker_build_scan_push:
     needs: [sonarcloud, snyk]
