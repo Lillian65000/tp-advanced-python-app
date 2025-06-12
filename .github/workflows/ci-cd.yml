@@ -26,7 +26,7 @@ jobs:
     - name: Run tests
       run: pytest tests/
 
-sonarcloud:
+  sonarcloud:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +37,7 @@ sonarcloud:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-snyk:
+  snyk:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -49,7 +49,7 @@ snyk:
       with:
         args: --severity-threshold=high
 
-docker_build_scan_push:
+  docker_build_scan_push:
     needs: [sonarcloud, snyk]
     runs-on: ubuntu-latest
     steps:
