@@ -8,6 +8,7 @@ on:
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/advanced-python-app
+  ENV: ${{ secrets.ENVIRONMENT }}  # <-- expose ENVIRONMENT dans l'environnement global
 
 jobs:
   test:
